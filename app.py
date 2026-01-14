@@ -1,5 +1,10 @@
 import streamlit as st
-from gtts import gTTS
+try:
+    from gtts import gTTS
+except ImportError:
+    import os
+    os.system("pip install gTTS")
+    from gtts import gTTS
 from io import BytesIO
 import time
 
